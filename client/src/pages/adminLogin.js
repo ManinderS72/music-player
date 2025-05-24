@@ -7,7 +7,7 @@ function AdminLogin() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await fetch("http://localhost:3001/admin/login", {
+    const res = await fetch("https://music-player-backend-nqm1.onrender.com/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password })

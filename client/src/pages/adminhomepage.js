@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import YouTube from "react-youtube";
 import './adminhomepage.css';
 
- const socket = io("http://localhost:3001"); // Point to your backend
+ const socket = io("https://music-player-backend-nqm1.onrender.com/"); // Point to your backend
  export default function Adminhomepage(){
  const[nowPlaying , setNowplaying] = useState(null);
  const [songs , setSongs] = useState([]);

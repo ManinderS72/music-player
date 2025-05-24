@@ -4,7 +4,7 @@ import { useEffect } from "react";
  // socket 
 
  import { io } from "socket.io-client";
- const socket = io("http://localhost:3001"); // Point to your backend
+ const socket = io("https://music-player-backend-nqm1.onrender.com/"); // Point to your backend
 
 
 export default function UsersHomepage() {
