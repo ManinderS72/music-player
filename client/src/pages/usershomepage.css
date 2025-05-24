@@ -1,0 +1,185 @@
+/* ===== Global Styling ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  overflow-x: hidden;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00f7ff;
+  animation: fadeIn 2s ease-in;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* ===== Now Playing Section ===== */
+.now-playing {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.song-card.now {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffcc;
+  animation: pulse 3s infinite;
+}
+
+/* ===== Upcoming Songs Section ===== */
+.song-list {
+  flex: 1 1 50%;
+  max-height: 500px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.song-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.song-card:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* ===== Add Song Section ===== */
+.add-song {
+  flex: 1 1 45%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.add-form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.add-form input:focus {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+.vote-btn {
+  background-color: #00f7ff;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.vote-btn:hover {
+  background-color: #00d6e0;
+  transform: scale(1.05);
+}
+
+/* ===== Background Music Notes Animation ===== */
+.page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.02;
+  animation: scrollBg 60s linear infinite;
+}
+
+@keyframes scrollBg {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* ===== Fancy Animations ===== */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Scrollbar Styling ===== */
+.song-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.song-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.song-list::-webkit-scrollbar-thumb {
+  background-color: #00f7ff;
+  border-radius: 3px;
+} 
+
+.song-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  animation: pulse 2s infinite;
+}
